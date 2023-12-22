@@ -9,17 +9,24 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-*{
+* {
   overflow-x: hidden;
-  
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e201e39;
+  width: 0.1rem;
+  border-radius: 1rem;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
   width: fit-content;
-
-  
 }
 
 a {
