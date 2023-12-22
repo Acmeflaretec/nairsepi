@@ -423,10 +423,14 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/nair/WhatsApp Image 2023-12-22 at 1.19.55 PM.jpeg") top center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
+  background: url("../img/nair/WhatsApp\ Image\ 2023-12-22\ at\ 1.19.55\ PM.jpeg") top center ;
+  background-size: cover;
+  position: relative
+}
+  @media (max-width: 768px) {
+    #hero {
+      background-size: contain;
+    }
 }
 
 #hero:before {
