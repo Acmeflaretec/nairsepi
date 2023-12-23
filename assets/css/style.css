@@ -177,7 +177,6 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   height: 70px;
-  
 }
 
 #header.fixed-top {
@@ -199,7 +198,6 @@ h6 {
 }
 
 #header .logo img {
-
   max-height: 125px;
   margin-bottom: 10%;
 }
@@ -230,7 +228,7 @@ h6 {
   position: relative;
 }
 
-.navbar>ul>li {
+.navbar > ul > li {
   margin-left: 5px;
 }
 
@@ -256,7 +254,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   background: #ffffff;
 }
 
@@ -290,11 +288,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
   color: #fff;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -306,7 +304,7 @@ h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -318,7 +316,7 @@ h6 {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
@@ -389,7 +387,7 @@ h6 {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
   color: #000000;
   background: none;
 }
@@ -425,11 +423,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
   color: #cc1616;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
@@ -437,13 +435,23 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../img//nair/7095D3DF-DC30-4739-9C51-F0DCD8512785.jpeg") top center;
-  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-image: linear-gradient(white, #4d68ad, #21212d, #2c2c31);
   position: relative;
+  padding-bottom: 60px;
 }
-
+#hero-img {
+  background: url("../img/nair/bgImage.png") top center;
+  background-size: 800px;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 0;
+  align-items: flex-end;
+  min-width: 100vw;
+  height: 800px;
+}
 @media only screen and (max-width: 768px) {
   #hero {
     height: calc(100vh - 50px); /* Adjust the height for smaller screens */
@@ -493,19 +501,42 @@ h6 {
   border-color: #cc1616;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1600px) {
+  #hero .container {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 1600px) {
   #hero {
-    background-attachment: fixed;
+    margin-bottom: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #hero .container {
+    padding-top: 50vh;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 768px) {
   #hero {
+    margin-bottom: 0;
     text-align: center;
   }
 
   #hero .container {
-    padding-top: 40px;
+    padding-top: 50vh;
   }
 
   #hero h1 {
@@ -739,7 +770,7 @@ section {
 
 .services .icon-box:hover {
   background: #f3f4e7;
-  border-color:#f3f4e7;
+  border-color: #f3f4e7;
   padding: 70px 20px 90px 20px;
 }
 
@@ -764,7 +795,8 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/cta-bg.jpg") fixed center center;
   background-size: cover;
   padding: 120px 0;
 }
@@ -922,7 +954,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -930,7 +965,10 @@ section {
   border: 1px solid #cc1616;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #cc1616;
 }
 
@@ -953,7 +991,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1190,7 +1228,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1242,7 +1280,7 @@ section {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #4c3737;
   border: 0;
   padding: 10px 24px;
@@ -1250,7 +1288,7 @@ section {
   transition: 0.4s;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #000000;
 }
 
@@ -1286,11 +1324,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #333333;
@@ -1305,7 +1343,6 @@ section {
   padding: 0 0 30px 0;
   color: #000000;
   font-size: 14px;
- 
 }
 
 #footer .footer-top {
@@ -1351,8 +1388,6 @@ section {
   transition: 0.3s;
 }
 
-
-
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: 600;
@@ -1395,8 +1430,6 @@ section {
   line-height: 1;
 }
 
-
-
 #footer .footer-top .footer-newsletter form {
   margin-top: 30px;
   background: #fff;
@@ -1405,13 +1438,13 @@ section {
   border-radius: 4;
 }
 
-#footer .footer-top .footer-newsletter form input[type=email] {
+#footer .footer-top .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 4px;
   width: calc(100% - 110px);
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit] {
+#footer .footer-top .footer-newsletter form input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1426,7 +1459,7 @@ section {
   border-radius: 4;
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit]:hover {
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
   background: #9db3c1;
 }
 
