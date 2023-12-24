@@ -512,7 +512,11 @@ h6 {
     text-align: center;
     justify-content: center;
   }
-
+  
+  #hero-img {
+    height: calc(100vh - 200px); 
+    background-size: 600px;
+  }
   #hero .container {
     padding-top: 50vh;
   }
@@ -533,10 +537,14 @@ h6 {
   #hero {
     margin-bottom: 0;
     text-align: center;
+    /* height: (11100-1115)px; */
   }
-
+  #hero-img {
+    background-size: 400px;
+    height: 500px;
+  }
   #hero .container {
-    padding-top: 50vh;
+    padding-top: 40vh;
   }
 
   #hero h1 {
