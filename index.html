@@ -440,50 +440,58 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <script>
-    function closeModal() {
-      document.getElementById('successModal').style.display = 'none';
-    }
+   function closeModal() {
+  document.getElementById('successModal').style.display = 'none';
+}
 
-    function closeModalAndNavigate() {
-      closeModal();
-      // Redirect to index.html
-      window.location.href = 'index.html';
-    }
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxWebH7BrGIXNwoEBkVM68BS3TwG0HAs9rpF0nILQvImcjGix_92pmTtX-hZOYxu_qc/exec';
-    const form = document.forms['contactus'];
+function closeModalAndNavigate() {
+  closeModal();
+  // Redirect to index.html
+  window.location.href = 'index.html';
+}
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
+function resetForm() {
+  const form = document.forms['contactus'];
+  form.reset();
+}
 
-      // Show loading message
-      const loadingElement = document.querySelector('.loading');
-      loadingElement.style.display = 'block';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxWebH7BrGIXNwoEBkVM68BS3TwG0HAs9rpF0nILQvImcjGix_92pmTtX-hZOYxu_qc/exec';
+const form = document.forms['contactus'];
 
-      // Perform Google Apps Script API request
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => response.json())
-        .then(data => {
-          // Hide loading message
-          loadingElement.style.display = 'none';
+form.addEventListener('submit', e => {
+  e.preventDefault();
 
-          // Check if the request was successful
-          if (data.result === 'success') {
-            // Show success modal
-            document.getElementById('successModal').style.display = 'block';
-          } else {
-            // Show error message
-            document.querySelector('.error-message').textContent = 'Error: ' + data.message;
-          }
-        })
-        .catch(error => {
-          // Hide loading message
-          loadingElement.style.display = 'none';
+  // Show loading message
+  const loadingElement = document.querySelector('.loading');
+  loadingElement.style.display = 'block';
 
-          // Show error message
-          document.querySelector('.error-message').textContent = 'Error: ' + error.message;
-        });
+  // Perform Google Apps Script API request
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => response.json())
+    .then(data => {
+      // Hide loading message
+      loadingElement.style.display = 'none';
+
+      // Check if the request was successful
+      if (data.result === 'success') {
+        // Show success modal
+        document.getElementById('successModal').style.display = 'block';
+
+        // Reset the form fields
+        resetForm();
+      } else {
+        // Show error message
+        document.querySelector('.error-message').textContent = 'Error: ' + data.message;
+      }
+    })
+    .catch(error => {
+      // Hide loading message
+      loadingElement.style.display = 'none';
+
+      // Show error message
+      document.querySelector('.error-message').textContent = 'Error: ' + error.message;
     });
-
+});
     function scrollToMoreServices() {
       var moreServicesSection = document.getElementById('more-services');
       if (moreServicesSection) {
