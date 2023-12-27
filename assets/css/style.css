@@ -477,7 +477,10 @@ h6 {
   color: #fff;
 }
 
-#hero h2 {
+#hero p {
+  justify-content: center;
+  /* text-align: justify; */
+  width: 85%;
   color: #eee;
   margin-bottom: 30px;
   font-size: 24px;
@@ -505,6 +508,9 @@ h6 {
   #hero .container {
     padding-left: 80px;
   }
+  #hero p {
+    width: 50%;
+  }
 }
 @media (max-width: 1600px) {
   #hero {
@@ -512,10 +518,13 @@ h6 {
     text-align: center;
     justify-content: center;
   }
-  
+  .para {
+    display: flex;
+    justify-content: center;
+  }
   #hero-img {
-    height: calc(100vh - 200px); 
-    background-size: 600px;
+    height: calc(100vh - 200px);
+    background-size: 700px;
   }
   #hero .container {
     padding-top: 50vh;
