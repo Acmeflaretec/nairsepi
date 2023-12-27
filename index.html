@@ -152,7 +152,7 @@
     <!-- End About Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="programmes" class="why-us">
+    <section id="why-us" class="why-us">
       <div class="container">
         <div class="row">
           <div class="col-lg-4" data-aos="fade-up">
@@ -182,7 +182,7 @@
     <!-- End Why Us Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <section id="programmes" class="why-us">
       <div id="our-programmes" class="section-title">
         <span>Our Programmes</span>
         <h2>Our Programmes</h2>
@@ -192,7 +192,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-1" data-aos="fade-right">
-            <img style="box-shadow: 0 4px 8px rgba(1, 0, 0, 0.1); border: 10px solid #f3f4e7;" src="./assets/img/nair/programmes.jpg" class="img-fluid" alt="">
+            <img style="box-shadow: 0 4px 8px rgba(1, 0, 0, 0.1); border: 10px solid #f3f4e7;"
+              src="./assets/img/nair/programmes.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-2 " data-aos="fade-left">
             <div class="col-md-12 mt-4 mt-lg-0 " data-aos="fade-up" data-aos-delay="150">
@@ -206,7 +207,21 @@
 
                     <h3>California Hypnosis Institute </h3>
                     <h5>Clinical Hypnotherapy (Level I and Level II)
-                      January 2024</h5>
+                      January 2024</h5><br />
+
+                    <h6>Level I: Introduction to Clinical Hypnotherapy</h6>
+                    <p>
+                      ​
+                      (Brief History of Hypnosis, History and Development of the Human Mind, Theory of Mind, How to
+                      create the Hypnotic State, Theory of Suggestibility, Laws of Suggestibility, How to Conduct a
+                      Hypnosis Session, Self Hypnosis and more)
+                    </p><br />
+                    <h6>
+                      Level II : Advanced Techniques and Modalities</h6>
+                    <p> ​
+                      (Hypnotic Modalities, Basics of Ericksonian and Kappasinian Hypnosis,
+                      Introduction to Neuro-Linguistic Programming (NLP), Introduction to Handwriting Analysis, Age &
+                      Past Life Regression and more)</p>
                   </div>
                 </div>
               </div>
@@ -487,58 +502,58 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <script>
-   function closeModal() {
-  document.getElementById('successModal').style.display = 'none';
-}
+    function closeModal() {
+      document.getElementById('successModal').style.display = 'none';
+    }
 
-function closeModalAndNavigate() {
-  closeModal();
-  // Redirect to index.html
-  window.location.href = 'index.html';
-}
+    function closeModalAndNavigate() {
+      closeModal();
+      // Redirect to index.html
+      window.location.href = 'index.html';
+    }
 
-function resetForm() {
-  const form = document.forms['contactus'];
-  form.reset();
-}
+    function resetForm() {
+      const form = document.forms['contactus'];
+      form.reset();
+    }
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxWebH7BrGIXNwoEBkVM68BS3TwG0HAs9rpF0nILQvImcjGix_92pmTtX-hZOYxu_qc/exec';
-const form = document.forms['contactus'];
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxWebH7BrGIXNwoEBkVM68BS3TwG0HAs9rpF0nILQvImcjGix_92pmTtX-hZOYxu_qc/exec';
+    const form = document.forms['contactus'];
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+    form.addEventListener('submit', e => {
+      e.preventDefault();
 
-  // Show loading message
-  const loadingElement = document.querySelector('.loading');
-  loadingElement.style.display = 'block';
+      // Show loading message
+      const loadingElement = document.querySelector('.loading');
+      loadingElement.style.display = 'block';
 
-  // Perform Google Apps Script API request
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => response.json())
-    .then(data => {
-      // Hide loading message
-      loadingElement.style.display = 'none';
+      // Perform Google Apps Script API request
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json())
+        .then(data => {
+          // Hide loading message
+          loadingElement.style.display = 'none';
 
-      // Check if the request was successful
-      if (data.result === 'success') {
-        // Show success modal
-        document.getElementById('successModal').style.display = 'block';
+          // Check if the request was successful
+          if (data.result === 'success') {
+            // Show success modal
+            document.getElementById('successModal').style.display = 'block';
 
-        // Reset the form fields
-        resetForm();
-      } else {
-        // Show error message
-        document.querySelector('.error-message').textContent = 'Error: ' + data.message;
-      }
-    })
-    .catch(error => {
-      // Hide loading message
-      loadingElement.style.display = 'none';
+            // Reset the form fields
+            resetForm();
+          } else {
+            // Show error message
+            document.querySelector('.error-message').textContent = 'Error: ' + data.message;
+          }
+        })
+        .catch(error => {
+          // Hide loading message
+          loadingElement.style.display = 'none';
 
-      // Show error message
-      document.querySelector('.error-message').textContent = 'Error: ' + error.message;
+          // Show error message
+          document.querySelector('.error-message').textContent = 'Error: ' + error.message;
+        });
     });
-});
     function scrollToMoreServices() {
       var moreServicesSection = document.getElementById('more-services');
       if (moreServicesSection) {
